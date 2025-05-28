@@ -9,7 +9,7 @@ Esse algoritmo resolve o famoso jogo matemático das Torres de Hanói.
 
 ### Como Rodar a aplicação
 - Ter Python instalado
-- Dar o comando git clone do repositório
+- Dar o comando git clone https://github.com/Leonardo1205/Torres-de-Hanoi.git
 - ir até o diretório do projeto: cd torre_de_hanoi
 - Rodar o comando python app.py no terminal
 
