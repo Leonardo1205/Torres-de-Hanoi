@@ -1,10 +1,12 @@
-def torre_hanoi(n, origem, destino, auxiliar):
+def torre_hanoi(n, origem, destino, auxiliar, contador):
     if n == 1:
         print(f"➡️  Mova o disco 1 de {origem} para {destino}")
+        contador[0] += 1
         return
-    torre_hanoi(n - 1, origem, auxiliar, destino)
+    torre_hanoi(n - 1, origem, auxiliar, destino, contador)
     print(f"➡️  Mova o disco {n} de {origem} para {destino}")
-    torre_hanoi(n - 1, auxiliar, destino, origem)
+    contador[0] += 1
+    torre_hanoi(n - 1, auxiliar, destino, origem, contador)
 
 if __name__ == '__main__':
     print("🎮 Bem-vindo ao Jogo das Torres de Hanoi! 🎮")
@@ -43,8 +45,9 @@ if __name__ == '__main__':
             exit()
 
         print(f"\n🚀 Iniciando a resolução das Torres de Hanoi com {n} discos...\n")
-        torre_hanoi(n, origem, destino, auxiliar)
-        print("\n✅ Parabéns! Resolução concluída!")
+        contador = [0] 
+        torre_hanoi(n, origem, destino, auxiliar, contador)
+        print(f"\n✅ Parabéns! Resolução concluída! Total de jogadas: {contador[0]}")
 
     except ValueError:
         print("❌ Erro: Entrada inválida. Por favor, digite um número inteiro para a quantidade de discos.")
